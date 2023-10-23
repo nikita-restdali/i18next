@@ -2,5 +2,5 @@
     "app_title": "titre",
     "langue": "langue",
     "welcome": "Bonjour, je m'appelle Nikita",
-    "days_since_release": "Cela fait {{number_of_days}} jours depuis la sortie de cette vidéo"
+    "days_since_release": "Cela fait {{number_of_days}} jours depuis la sortie de cette page"
 }
