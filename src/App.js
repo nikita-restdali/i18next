@@ -60,8 +60,9 @@ function App() {
                 <li key={country_code}>
                   <button className="dropdown-item" onClick={() =>{
                       i18next.changeLanguage(code)
-                  }}>
-                    <span className={`flag-icon flag-icon-${country_code} mx-4`}></span>
+                  }}
+                  disabled ={code === currentLanguageCode}>
+                    <span className={`flag-icon flag-icon-${country_code} mx-2`} style={{opacity: code === currentLanguageCode ? 0.5 : 1}}></span>
                     {name}
                   </button>
                 </li>
