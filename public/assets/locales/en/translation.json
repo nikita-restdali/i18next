@@ -1,3 +1,6 @@
 {
-    "welcome": "hi, my name is Nikita"
+    "app_title": "title",
+    "language": "language",
+    "welcome": "Hello my name is Nikita",
+    "days_since_release": "It has been {{number_of_days}} days since this video was released"
 }
