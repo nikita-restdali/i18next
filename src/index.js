@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
+import {initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-// import App from './App';
+import App from './App';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    
+
+    supportedLngs:['en', 'fr', 'ar'],
     fallbackLng: "en",
     detection: {
       order: ['cookie', 'htmlTag',  'localStorage','path', 'subdomain'],
@@ -27,17 +30,9 @@ i18n
     
   });
 
-function App() {
-  const { t } = useTranslation();
-
-  return <h2>{t('welcome')}</h2>;
-}
-
-
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    ReactDOM.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>,
+      document.getElementById('root')
+    );
