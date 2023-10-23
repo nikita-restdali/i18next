@@ -2,5 +2,6 @@
     "app_title": "عنوان",
     "language": "اللغة",
     "welcome": "مرحبا اسمي نيكيتا",
-    "days_since_release":" لقد مر {{number_of_days}} يوم منذ إصدار هذه الصفحة"
+    "days_since_release":" لقد مر {{number_of_days}} يوم منذ إصدار هذه الصفحة",
+    
   }
