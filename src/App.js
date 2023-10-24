@@ -1,5 +1,7 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
+import globe from './image/globe.png';
+import i18next from 'i18next';
 
 
 const languages = [
@@ -32,12 +34,12 @@ function App() {
       <div className='d-flex justify-content-end'>
         <div className="dropdown">
             <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
+              <img src={globe} alt='globe'/>
             </button>
             <ul className="dropdown-menu">
               {languages.map(({code, name, country_code}) => (
                 <li key={country_code}>
-                  <button className="dropdown-item">
+                  <button className="dropdown-item" onClick={() => i18next.changeLanguage(code)}>
                     <span className={`flag-icon flag-icon-${country_code} mx-4`}></span>
                     {name}
                   </button>
