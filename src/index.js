@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import i18n from "i18next";
 import {initReactI18next } from "react-i18next";
@@ -24,15 +24,22 @@ i18n
     backend: {
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
-    react: {
-      useSuspense: false,
-    }
+    // react: {
+    //   useSuspense: false,
+    // }
     
   });
-
+  const lodingMarkup = (
+    <div className='py-4 text-center'>
+      <h2>Loading....</h2>
+    </div>
+  )
     ReactDOM.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>,
+      <Suspense fallback={lodingMarkup}>
+          <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Suspense>,
+      
       document.getElementById('root')
     );
