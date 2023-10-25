@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import globe from './image/globe.png';
 import i18next from 'i18next';
-
+import cookies from 'js-cookie';
 
 const languages = [
   {
@@ -19,16 +19,24 @@ const languages = [
     code: 'ar',
     name: 'العربية',
     country_code: 'sa',
+    dir:'rtl'
   },
 ]
 
 function App() {
+  const currentLanguageCode = cookies.get('i18next') || 'en'
+  const currentLanguage = languages.find( l => l.code === currentLanguageCode)
 
   const { t } =useTranslation();
 
   const releaseDate = new Date('2023-10-23');
   const timeDifference = new Date() - releaseDate ;
   const number_of_days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+
+  useEffect(() =>{
+document.body.dir = currentLanguage.dir || 'ltr'
+  }, [currentLanguage])
   return (
     <div className="Container ">
       <div className='d-flex justify-content-end'>
