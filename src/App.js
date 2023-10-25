@@ -45,6 +45,11 @@ document.body.dir = currentLanguage.dir || 'ltr'
               <img src={globe} alt='globe'/>
             </button>
             <ul className="dropdown-menu">
+              <li>
+                <span className='dropdown-item-text'>
+                    {t('language')}
+                </span>
+              </li>
               {languages.map(({code, name, country_code}) => (
                 <li key={country_code}>
                   <button className="dropdown-item" onClick={() => i18next.changeLanguage(code)}
