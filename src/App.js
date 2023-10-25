@@ -35,8 +35,9 @@ function App() {
 
 
   useEffect(() =>{
-document.body.dir = currentLanguage.dir || 'ltr'
-  }, [currentLanguage])
+    document.body.dir = currentLanguage.dir || 'ltr'
+    document.title = t('app_title')
+  }, [currentLanguage, t])
   return (
     <div className="Container ">
       <div className='d-flex justify-content-end'>
